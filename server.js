@@ -18,7 +18,7 @@ app.post(`/submitlog`, (req, res) =>{
         }else{
             const json = JSON.parse(data);
             json.push(req.body);
-            const newData = JSON.stringify(json);
+            const newData = JSON.stringify(json, null, 1);
             fs.writeFile(`./db/loopLogs.json`, newData, (err) => err? console.error(err): console.log(`Appended data.`)) 
         };
     })
