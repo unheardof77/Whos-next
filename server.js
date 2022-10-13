@@ -11,6 +11,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html
 app.post(`/submitlog`, (req, res) =>{
     console.info(`${req.method} request received to submit data.`);
     console.log(req.body);
+    return res.json(`test`)
 });
 
 app.listen(PORT, () =>console.log(`App listening at http://localhost:${PORT}`));

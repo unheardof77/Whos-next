@@ -1,5 +1,5 @@
 const $buttons = document.getElementById(`buttonWrap`);
-const studentLoop = [];
+let studentLoop = [];
 
 //there are 24 people total in the class
 class Student {
@@ -24,6 +24,7 @@ function checkRSALength(){
             body: JSON.stringify(loopData),
         })
         .catch((err)=> console.error(err))
+        studentLoop = []
     };
 };
 
