@@ -1,4 +1,5 @@
 const $buttons = document.getElementById(`buttonWrap`);
+const $allButtons = document.querySelectorAll(`button`);
 let studentLoop = [];
 
 //there are 24 people total in the class
@@ -25,11 +26,15 @@ function checkRSALength(){
         })
         .catch((err)=> console.error(err))
         studentLoop = []
+        for(i=0; i < $allButtons.length; i++){
+            $allButtons[i].style.display = "inline-block";
+        };
     };
 };
 
 function addToRSA(e){
-    let target = new Student(e.target.getAttribute`data-name`);
+    let target = new Student(e.target.getAttribute(`data-name`));
+    e.target.style.display = "none"
     studentLoop.push(target);
     checkRSALength();
 };
