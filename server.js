@@ -34,7 +34,7 @@ app.post(`/submitlograndom`, (req, res) =>{
         }else{
             const json = JSON.parse(data);
             json.push(req.body);
-            const newData = JSON.stringify(json, null, 1);
+            const newData = JSON.stringify(json);
             fs.writeFile(`./db/testloopLogs.json`, newData, (err) => err? console.error(err): console.log(`Appended data to test logs.`)) 
         };
     })
